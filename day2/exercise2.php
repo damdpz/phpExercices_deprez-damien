@@ -1,18 +1,19 @@
 <?php
 
-$tab = "kiwi, pomme, poire, litchi, rhubarbe";
+$tab = array("kiwi", "pomme", "poire", "litchi", "rhubarbe");
 $choice = "poire";
 
-function searchingFruit ($tab, $choice){
+
+function searchingFruit($tab, $choice) {
     foreach ($tab as $value) {
-        if ($value == "poire") {
-            echo "Le fruit a été trouvé : " . $value;
+        if ($value === $choice) {
+        return "Le fruit a été trouvé : " . $choice;
         }
-        else { 
-            echo "Recherche infructueuse.";
-        }
-        
     }
+    return "Recherche infructueuse.";
 }
+
+$result = searchingFruit($tab, $choice);
+    echo $result;
 
 ?>
